@@ -12,6 +12,9 @@ import { IconCloudDemo } from "./icon-cloud-demo";
 import { AnimatedBeamDemo } from "./animated-beam-demo";
 import { Ripple } from "@/components/magicui/ripple";
 import { MegaphoneIcon } from "lucide-react";
+import { AnimatedGridPattern } from "../magicui/animated-grid-pattern";
+import { cn } from "@/lib/utils";
+
 // Add Discord SVG icon
 const DiscordIcon = (props: React.SVGProps<SVGSVGElement>) => (
     <svg
@@ -26,79 +29,81 @@ const DiscordIcon = (props: React.SVGProps<SVGSVGElement>) => (
     </svg>
 );
 
-const features = [
-    {
-        Icon: FileTextIcon,
-        name: "Modern Web Development",
-        description: "Build responsive, performant websites with the latest technologies and best practices.",
-        href: "/",
-        cta: "Learn more",
-        background: null,
-        content: <OrbitingCirclesDemo />,
-        className: "lg:row-start-1 lg:row-end-4 lg:col-start-2 lg:col-end-3",
-    },
-    {
-        Icon: InputIcon,
-        name: "SEO Optimization",
-        description: "Boost your online visibility and drive organic traffic with our expert SEO strategies.",
-        href: "/",
-        cta: "Learn more",
-        background: null,
-        content: <IconCloudDemo />,
-        className: "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3",
-    },
-    {
-        Icon: GlobeIcon,
-        name: "Global Reach",
-        description: "Break language barriers and connect with audiences worldwide through seamless multilingual support.",
-        href: "/",
-        cta: "Learn more",
-        background: null,
-        content: <Globe className="absolute right-20 top-30 opacity-60" />,
-        className: "lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4",
-    },
-    {
-        Icon: DiscordIcon,
-        name: "Join our Discord Server",
-        description: "Connect with our community, get support, and stay updated by joining our Discord server!",
-        href: "https://discord.gg/ANZwR594",
-        cta: "Join Now",
-        background: null,
-        content: <div >
-            <Ripple />
-        </div>,
-        className: "lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:row-end-2",
-    },
-    {
-        Icon: BellIcon,
-        name: "AI Agents",
-        description:
-            "Leverage production-ready AI agents to automate tasks, enhance productivity, and drive business growth.",
-        href: "/ai-solutions",
-        cta: "Explore AI",
-        background: null,
-        content: <AnimatedBeamDemo />,
-        className: "lg:col-start-3 lg:col-end-3 lg:row-start-2 lg:row-end-4",
-    },
-    {
-        Icon: MegaphoneIcon,
-        name: "Digital Marketing",
-        description: "Drive growth and engagement with our comprehensive digital marketing solutions tailored to your business needs.",
-        href: "/marketing",
-        cta: "Get Started",
-        background: null,
-        content: <div>
-            <div>
-                <h3>Social Media</h3>
-                <p>We create and manage social media accounts for your business.</p>
-                </div>
-
-        </div>,
-        className: "lg:col-start-1 lg:col-end-4 lg:row-start-4 lg:row-end-5",
-    },
-];
-
 export function BentoDemo() {
+    const features = [
+        {
+            Icon: FileTextIcon,
+            name: "Modern Web Development",
+            description: "Build responsive, performant websites with the latest technologies and best practices.",
+            href: "/",
+            cta: "Learn more",
+            background: null,
+            content: <OrbitingCirclesDemo />,
+            className: "lg:row-start-1 lg:row-end-4 lg:col-start-2 lg:col-end-3",
+        },
+        {
+            Icon: InputIcon,
+            name: "SEO Optimization",
+            description: "Boost your online visibility and drive organic traffic with our expert SEO strategies.",
+            href: "/",
+            cta: "Learn more",
+            background: null,
+            content: <IconCloudDemo />,
+            className: "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3",
+        },
+        {
+            Icon: GlobeIcon,
+            name: "Global Reach",
+            description: "Break language barriers and connect with audiences worldwide through seamless multilingual support.",
+            href: "/",
+            cta: "Learn more",
+            background: null,
+            content: <Globe className="absolute right-20 top-30 opacity-60" />,
+            className: "lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4",
+        },
+        {
+            Icon: DiscordIcon,
+            name: "Join our Discord Server",
+            description: "Connect with our community, get support, and stay updated by joining our Discord server!",
+            href: "https://discord.gg/ANZwR594",
+            cta: "Join Now",
+            background: null,
+            content: <div>
+                <Ripple />
+            </div>,
+            className: "lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:row-end-2",
+        },
+        {
+            Icon: BellIcon,
+            name: "AI Agents",
+            description:
+                "Leverage production-ready AI agents to automate tasks, enhance productivity, and drive business growth.",
+            href: "/ai-solutions",
+            cta: "Explore AI",
+            background: null,
+            content: <AnimatedBeamDemo />,
+            className: "lg:col-start-3 lg:col-end-3 lg:row-start-2 lg:row-end-4",
+        },
+        {
+            Icon: MegaphoneIcon,
+            name: "Digital Marketing",
+            description: "Drive growth and engagement with our comprehensive digital marketing solutions tailored to your business needs.",
+            href: "/marketing",
+            cta: "Get Started",
+            background: <AnimatedGridPattern
+                numSquares={300}
+                maxOpacity={0.1}
+                duration={3}
+                repeatDelay={1}
+                className={cn(
+                    "[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]",
+                    "inset-x-0 inset-y-[-30%] h-[200%] skew-y-12",
+                )}
+            />,
+            className: "lg:col-start-1 lg:col-end-4 lg:row-start-4 lg:row-end-5",
+        },
+    ];
+
     return (
         <BentoGrid className="lg:grid-rows-3">
             {features.map((feature) => (

@@ -1,7 +1,7 @@
 import React, { ComponentPropsWithoutRef, CSSProperties } from "react";
 
 import { cn } from "@/lib/utils";
-import { LogoIcon } from "@/components/logo";
+import SolnixLogo from "@/components/solnix-logo";
 
 interface RippleProps extends ComponentPropsWithoutRef<"div"> {
   mainCircleSize?: number;
@@ -29,7 +29,7 @@ export const Ripple = React.memo(function Ripple({
         className="absolute left-1/2 top-1/2 z-10 flex -translate-x-1/2 -translate-y-1/2 items-center justify-center"
         style={{ pointerEvents: "none" }}
       >
-        <LogoIcon className="w-10 h-10 text-foreground" />
+        <SolnixLogo className="w-30 h-30 text-foreground" />
       </div>
       {/* Ripple Circles */}
       {Array.from({ length: numCircles }, (_, i) => {

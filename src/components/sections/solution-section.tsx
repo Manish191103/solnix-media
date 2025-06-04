@@ -1,6 +1,7 @@
 import React from 'react';
 import { WordRotate } from "@/components/magicui/word-rotate";
 import IntegrationsSection from '@/components/integrations-7';
+import WobbleCardDemo from "@/components/ui/wobble-card-demo";
 
 const SolutionSection = () => (
     <div>
@@ -12,7 +13,9 @@ const SolutionSection = () => (
                     className="text-6xl font-bold mb-6"
                 />
                 <IntegrationsSection />
-
+                <div className="mt-20">
+                    <WobbleCardDemo />
+                </div>
             </div>
         </section>
     </div>

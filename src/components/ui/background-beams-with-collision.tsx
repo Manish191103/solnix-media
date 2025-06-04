@@ -79,8 +79,8 @@ export const BackgroundBeamsWithCollision = ({
         <CollisionMechanism
           key={beam.initialX + "beam-idx"}
           beamOptions={beam}
-          containerRef={containerRef}
-          parentRef={parentRef}
+          containerRef={containerRef as React.RefObject<HTMLDivElement>}
+          parentRef={parentRef as React.RefObject<HTMLDivElement>}
         />
       ))}
 
@@ -114,6 +114,7 @@ const CollisionMechanism = React.forwardRef<
       repeatDelay?: number;
     };
   }
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 >(({ parentRef, containerRef, beamOptions = {} }, ref) => {
   const beamRef = useRef<HTMLDivElement>(null);
   const [collision, setCollision] = useState<{
@@ -158,7 +159,7 @@ const CollisionMechanism = React.forwardRef<
     const animationInterval = setInterval(checkCollision, 50);
 
     return () => clearInterval(animationInterval);
-  }, [cycleCollisionDetected, containerRef]);
+  }, [cycleCollisionDetected, containerRef, parentRef]);
 
   useEffect(() => {
     if (collision.detected && collision.coordinates) {

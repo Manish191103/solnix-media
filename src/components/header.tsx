@@ -1,6 +1,6 @@
 'use client'
 import Link from 'next/link'
-import { Logo } from '@/components/logo'
+import SolnixLogo from '@/components/solnix-logo'
 import { Menu } from 'lucide-react'
 import React from 'react'
 import { cn } from '@/lib/utils'
@@ -36,7 +36,7 @@ export const HeroHeader = () => {
                                 href="/"
                                 aria-label="home"
                                 className="flex items-center space-x-2">
-                                <Logo />
+                                <SolnixLogo className="w-12 h-12" />
                             </Link>
 
                             <Sheet>

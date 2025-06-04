@@ -1,5 +1,5 @@
 import { Gemini, Replit, MagicUI, VSCodium, MediaWiki, GooglePaLM } from '@/components/logos'
-import { LogoIcon } from '@/components/logo'
+import SolnixLogo from '@/components/solnix-logo'
 import { cn } from '@/lib/utils'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
@@ -95,7 +95,7 @@ export default function IntegrationsSection() {
                             <IntegrationCard
                                 className="shadow-black-950/10 size-16 bg-white/25 shadow-xl backdrop-blur-md backdrop-grayscale dark:border-white/10 dark:shadow-white/15"
                                 isCenter={true}>
-                                <LogoIcon />
+                                <SolnixLogo />
                             </IntegrationCard>
                         </div>
                     </div>
