@@ -181,12 +181,12 @@ export default function ContactEmail() {
                                         title="contact.solnixmedia.com"
                                         href="/contact"
                                     >
-                                        <div className="flex basis-full flex-col p-6 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem] lg:w-[22rem] lg:h-[22rem] bg-black/20 backdrop-blur-md rounded-xl border border-white/10">
-                                            <h3 className="max-w-xs !pb-2 !m-0 font-bold text-xl text-slate-100">
+                                        <div className="flex basis-full flex-col p-6 tracking-tight text-slate-100/50 sm:basis-1/2 w-[20rem] h-[20rem] lg:w-[22rem] lg:h-[22rem] bg-black/90 backdrop-blur-md rounded-xl border border-white/10">
+                                            <h3 className="max-w-xs !pb-2 !m-0 font-bold text-xl text-white">
                                                 Solnix UI
                                             </h3>
-                                            <div className="text-base !m-0 !p-0 font-normal mb-4">
-                                                <span className="text-slate-300">
+                                            <div className="text-sm !m-0 !p-0 font-normal mb-4">
+                                                <span className="text-gray-300">
                                                     We are here to help you.
                                                 </span>
                                             </div>
@@ -200,20 +200,23 @@ export default function ContactEmail() {
                                 </div>
 
                                 {/* Fallback card for very small screens */}
+
                                 <div className="block sm:hidden">
-                                    <div className="bg-black/20 backdrop-blur-md rounded-xl border border-white/10 p-6 mx-4">
-                                        <h3 className="font-bold text-xl text-slate-100 mb-2">
-                                            Solnix UI
-                                        </h3>
-                                        <div className="text-base text-slate-300 mb-4">
-                                            We are here to help you.
-                                        </div>
-                                        <div className="w-full h-32 rounded-lg bg-gradient-to-br from-green-400 via-blue-500 to-purple-600 overflow-hidden">
-                                            <div className="w-full h-full flex items-center justify-center">
-                                                <div className="text-white text-lg font-bold">Connect With Us</div>
+                                    <a href="https://solnixmedia.com/contact" className="block">
+                                        <div className="bg-black/90 backdrop-blur-md rounded-xl border border-white/10 p-6 mx-4">
+                                            <h3 className="font-bold text-xl text-white mb-2">
+                                                Solnix UI
+                                            </h3>
+                                            <div className="text-sm text-gray-300 mb-4">
+                                                We are here to help you.
+                                            </div>
+                                            <div className="w-full h-32 rounded-lg bg-gradient-to-br from-green-400 via-blue-500 to-purple-600 overflow-hidden">
+                                                <div className="w-full h-full flex items-center justify-center">
+                                                    <div className="text-white text-lg font-bold">Connect With Us</div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                             </div>
                         </div>
