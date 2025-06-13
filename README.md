@@ -14,3 +14,6 @@ This is an open-source static landing page built with [Next.js](https://nextjs.o
 ## Getting Started
 
 1. Clone the repository:
+2. Maintain clean code practices."
+
+### Happy Coding!!!
