@@ -25,17 +25,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
-    {
-      url: `${baseUrl}/services`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/pricing`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.7,
-    },
+    // Removed /services and /pricing as dedicated pages do not exist.
+    // If these are sections on the homepage, they are covered by the main URL.
+    // Add them back if standalone pages are created.
   ];
-} 
+}

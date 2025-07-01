@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { cn } from "@/lib/utils";
-import React, { ElementType, ReactNode, useEffect, useState } from "react";
+import { cn } from '@/lib/utils';
+import React, { ElementType, ReactNode, useEffect, useState } from 'react';
 
 export interface VideoTextProps {
   /**
@@ -27,7 +27,7 @@ export interface VideoTextProps {
   /**
    * Whether to preload the video
    */
-  preload?: "auto" | "metadata" | "none";
+  preload?: 'auto' | 'metadata' | 'none';
   /**
    * The content to display (will have the video "inside" it)
    */
@@ -67,32 +67,32 @@ export interface VideoTextProps {
 export function VideoText({
   src,
   children,
-  className = "",
+  className = '',
   autoPlay = true,
   muted = true,
   loop = true,
-  preload = "auto",
+  preload = 'auto',
   fontSize = 20,
-  fontWeight = "bold",
-  textAnchor = "middle",
-  dominantBaseline = "middle",
-  fontFamily = "sans-serif",
-  as: Component = "div",
+  fontWeight = 'bold',
+  textAnchor = 'middle',
+  dominantBaseline = 'middle',
+  fontFamily = 'sans-serif',
+  as: Component = 'div',
 }: VideoTextProps) {
-  const [svgMask, setSvgMask] = useState("");
-  const content = React.Children.toArray(children).join("");
+  const [svgMask, setSvgMask] = useState('');
+  const content = React.Children.toArray(children).join('');
 
   useEffect(() => {
     const updateSvgMask = () => {
       const responsiveFontSize =
-        typeof fontSize === "number" ? `${fontSize}vw` : fontSize;
+        typeof fontSize === 'number' ? `${fontSize}vw` : fontSize;
       const newSvgMask = `<svg xmlns='http://www.w3.org/2000/svg' width='100%' height='100%'><text x='50%' y='50%' font-size='${responsiveFontSize}' font-weight='${fontWeight}' text-anchor='${textAnchor}' dominant-baseline='${dominantBaseline}' font-family='${fontFamily}'>${content}</text></svg>`;
       setSvgMask(newSvgMask);
     };
 
     updateSvgMask();
-    window.addEventListener("resize", updateSvgMask);
-    return () => window.removeEventListener("resize", updateSvgMask);
+    window.addEventListener('resize', updateSvgMask);
+    return () => window.removeEventListener('resize', updateSvgMask);
   }, [content, fontSize, fontWeight, textAnchor, dominantBaseline, fontFamily]);
 
   const dataUrlMask = `url("data:image/svg+xml,${encodeURIComponent(svgMask)}")`;
@@ -101,33 +101,41 @@ export function VideoText({
     <Component className={cn(`relative size-full`, className)}>
       {/* Create a container that masks the video to only show within text */}
       <div
-        className="absolute inset-0 flex items-center justify-center"
+        className='absolute inset-0 flex items-center justify-center'
         style={{
           maskImage: dataUrlMask,
           WebkitMaskImage: dataUrlMask,
-          maskSize: "contain",
-          WebkitMaskSize: "contain",
-          maskRepeat: "no-repeat",
-          WebkitMaskRepeat: "no-repeat",
-          maskPosition: "center",
-          WebkitMaskPosition: "center",
+          maskSize: 'contain',
+          WebkitMaskSize: 'contain',
+          maskRepeat: 'no-repeat',
+          WebkitMaskRepeat: 'no-repeat',
+          maskPosition: 'center',
+          WebkitMaskPosition: 'center',
         }}
       >
+        {/* eslint-disable-next-line jsx-a11y/media-has-caption -- Video is purely decorative, sr-only text provides content */}
         <video
-          className="w-full h-full object-cover"
+          className='w-full h-full object-cover'
           autoPlay={autoPlay}
           muted={muted}
           loop={loop}
           preload={preload}
           playsInline
+          aria-hidden='true' // Mark as decorative
         >
           <source src={src} />
+          {/* Adding a track for accessibility. Since the video is decorative, a simple description is sufficient. */}
+          <track
+            kind='descriptions'
+            srcLang='en'
+            label='Decorative video background'
+          />
           Your browser does not support the video tag.
         </video>
       </div>
 
       {/* Add a backup text element for SEO/accessibility */}
-      <span className="sr-only">{content}</span>
+      <span className='sr-only'>{content}</span>
     </Component>
   );
 }

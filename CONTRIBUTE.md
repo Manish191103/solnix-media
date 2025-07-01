@@ -24,6 +24,7 @@ By participating in this project, you agree to abide by our Code of Conduct. Ple
 ### Prerequisites
 
 Before you begin, ensure you have the following installed:
+
 - Node.js (version 18 or higher)
 - npm or yarn package manager
 - Git
@@ -32,12 +33,14 @@ Before you begin, ensure you have the following installed:
 
 1. **Fork the repository** on GitHub
 2. **Clone your fork** locally:
+
    ```bash
    git clone https://github.com/YOUR_USERNAME/solnix-media.git
    cd solnix-media
    ```
 
 3. **Install dependencies**:
+
    ```bash
    npm install
    # or
@@ -45,6 +48,7 @@ Before you begin, ensure you have the following installed:
    ```
 
 4. **Start the development server**:
+
    ```bash
    npm run dev
    # or
@@ -75,6 +79,7 @@ We welcome various types of contributions:
 ## Pull Request Process
 
 1. **Create a new branch** from `main`:
+
    ```bash
    git checkout -b feature/your-feature-name
    # or
@@ -84,6 +89,7 @@ We welcome various types of contributions:
 2. **Make your changes** following our coding standards
 
 3. **Test your changes** thoroughly:
+
    ```bash
    npm run build
    npm run lint
@@ -92,6 +98,7 @@ We welcome various types of contributions:
 4. **Commit your changes** using our commit message guidelines
 
 5. **Push to your fork**:
+
    ```bash
    git push origin feature/your-feature-name
    ```
@@ -137,6 +144,7 @@ We welcome various types of contributions:
 ### Code Formatting
 
 We use Prettier for code formatting. Run the following before committing:
+
 ```bash
 npm run format
 ```
@@ -204,6 +212,7 @@ For feature requests, please:
 - Verify accessibility standards compliance
 
 Run tests with:
+
 ```bash
 npm run test
 ```
@@ -231,4 +240,4 @@ By contributing to Solnix Media, you agree that your contributions will be licen
 
 ---
 
-Thank you for contributing to Solnix Media! 🎉 
+Thank you for contributing to Solnix Media! 🎉

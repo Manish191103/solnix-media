@@ -15,12 +15,13 @@ function AnimatedGroup({
 }: AnimatedGroupProps) {
   return (
     <Component className={className}>
-      {Array.isArray(children)
-        ? children.map((child, index) => (
+      {Array.isArray(children) ? (
+        children.map((child, index) => (
           <ChildComponent key={index}>{child}</ChildComponent>
         ))
-        : <ChildComponent>{children}</ChildComponent>
-      }
+      ) : (
+        <ChildComponent>{children}</ChildComponent>
+      )}
     </Component>
   );
 }

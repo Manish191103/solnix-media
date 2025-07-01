@@ -12,4 +12,4 @@ export default function robots(): MetadataRoute.Robots {
     },
     sitemap: 'https://solnixmedia.com/sitemap.xml',
   };
-} 
+}

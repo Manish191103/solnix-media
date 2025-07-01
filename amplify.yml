@@ -10,9 +10,9 @@ frontend:
   artifacts:
     baseDirectory: .next
     files:
-      - "**/*"
-      - "!node_modules/**/*"
-      - "!.git/**/*"
+      - '**/*'
+      - '!node_modules/**/*'
+      - '!.git/**/*'
   cache:
     paths:
       - .next/cache/**/*
